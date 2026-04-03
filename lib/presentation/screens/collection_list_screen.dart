@@ -51,10 +51,7 @@ class _CollectionsList extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     if (collections.isEmpty) {
       return const Center(
-        child: Text(
-          'No collections found.',
-          style: TextStyle(color: Colors.grey, fontSize: 16),
-        ),
+        child: Text('No collections found.', style: TextStyle(color: Colors.grey, fontSize: 16)),
       );
     }
     return RefreshIndicator(
@@ -67,7 +64,7 @@ class _CollectionsList extends ConsumerWidget {
         separatorBuilder: (context, index) => const SizedBox(height: 12),
         itemBuilder: (context, index) {
           final collection = collections[index];
-          
+
           return TweenAnimationBuilder<double>(
             tween: Tween<double>(begin: 0.0, end: 1.0),
             duration: Duration(milliseconds: 400 + (index * 100).clamp(0, 400)),
@@ -75,10 +72,7 @@ class _CollectionsList extends ConsumerWidget {
             builder: (context, value, child) {
               return Opacity(
                 opacity: value,
-                child: Transform.translate(
-                  offset: Offset(0, 30 * (1 - value)),
-                  child: child,
-                ),
+                child: Transform.translate(offset: Offset(0, 30 * (1 - value)), child: child),
               );
             },
             child: _CollectionCard(collection: collection),
@@ -113,9 +107,7 @@ class _CollectionCard extends StatelessWidget {
                 errorBuilder: (context, error, stackTrace) {
                   return Container(
                     color: const Color(0xFFF0F0F0),
-                    child: const Center(
-                      child: Icon(Icons.image_not_supported_outlined, size: 48, color: Colors.grey),
-                    ),
+                    child: const Center(child: Icon(Icons.image_not_supported_outlined, size: 48, color: Colors.grey)),
                   );
                 },
               ),
@@ -132,11 +124,7 @@ class _CollectionCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         collection.title,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w800,
-                          color: Color(0xFF1C1B1F),
-                        ),
+                        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: Color(0xFF1C1B1F)),
                       ),
                     ),
                     if (collection.isPremium)
@@ -164,11 +152,7 @@ class _CollectionCard extends StatelessWidget {
                   collection.description,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 14,
-                    height: 1.5,
-                    color: Colors.grey.shade700,
-                  ),
+                  style: TextStyle(fontSize: 14, height: 1.5, color: Colors.grey.shade700),
                 ),
                 const SizedBox(height: 24),
                 Row(
@@ -180,20 +164,13 @@ class _CollectionCard extends StatelessWidget {
                         const SizedBox(width: 6),
                         Text(
                           '${collection.sectionCount} Units',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Colors.grey.shade600,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: TextStyle(fontSize: 13, color: Colors.grey.shade600, fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
                     Text(
                       dateFormat.format(collection.createdAt),
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: Colors.grey.shade500,
-                      ),
+                      style: TextStyle(fontSize: 13, color: Colors.grey.shade500),
                     ),
                   ],
                 ),
