@@ -104,6 +104,7 @@ class _CollectionCard extends StatelessWidget {
               child: Image.network(
                 collection.coverImageUrl,
                 fit: BoxFit.cover,
+                cacheWidth: 600,
                 errorBuilder: (context, error, stackTrace) {
                   return Container(
                     color: const Color(0xFFF0F0F0),
