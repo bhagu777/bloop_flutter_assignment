@@ -31,7 +31,7 @@ class _CollectionListScreenState extends ConsumerState<CollectionListScreen> {
       body: collectionsAsync.when(
         data: (collections) => _CollectionsList(collections: collections),
         loading: () => ListView.separated(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           itemCount: 4,
           separatorBuilder: (context, index) => const SizedBox(height: 8),
           itemBuilder: (context, index) => const ShimmerCard(),
@@ -59,7 +59,7 @@ class _CollectionsList extends ConsumerWidget {
         await ref.read(collectionListProvider.notifier).refresh();
       },
       child: ListView.separated(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
         itemCount: collections.length,
         separatorBuilder: (context, index) => const SizedBox(height: 12),
         itemBuilder: (context, index) {
@@ -114,7 +114,7 @@ class _CollectionCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -139,7 +139,7 @@ class _CollectionCard extends StatelessWidget {
                           'PREMIUM',
                           style: TextStyle(
                             color: Color(0xFFD48806),
-                            fontSize: 11,
+                            fontSize: 10,
                             fontWeight: FontWeight.w900,
                             letterSpacing: 0.5,
                           ),
@@ -154,7 +154,7 @@ class _CollectionCard extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(fontSize: 14, height: 1.5, color: Colors.grey.shade700),
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 12),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -164,13 +164,13 @@ class _CollectionCard extends StatelessWidget {
                         const SizedBox(width: 6),
                         Text(
                           '${collection.sectionCount} Units',
-                          style: TextStyle(fontSize: 13, color: Colors.grey.shade600, fontWeight: FontWeight.w500),
+                          style: TextStyle(fontSize: 12, color: Colors.grey.shade600, fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
                     Text(
                       dateFormat.format(collection.createdAt),
-                      style: TextStyle(fontSize: 13, color: Colors.grey.shade500),
+                      style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
                     ),
                   ],
                 ),
