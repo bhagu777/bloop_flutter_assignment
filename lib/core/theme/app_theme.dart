@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static ThemeData get light {
+    final textTheme = GoogleFonts.poppinsTextTheme();
+    
     return ThemeData(
       useMaterial3: true,
+      textTheme: textTheme,
+      fontFamily: GoogleFonts.adamina().fontFamily,
       colorScheme: ColorScheme.fromSeed(
         seedColor: const Color(0xFF673AB7),
         surface: const Color(0xFFFBF9FF),
