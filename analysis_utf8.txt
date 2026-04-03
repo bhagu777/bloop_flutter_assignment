@@ -1,0 +1,11 @@
+﻿Analyzing bloop_flutter_assignment...
+
+  error - lib\core\theme\app_theme.dart:15:18 - The argument type 'CardTheme' can't be assigned to the parameter type 'CardThemeData?'.  - argument_type_not_assignable
+  error - lib\presentation\screens\collection_list_screen.dart:46:12 - The named parameter 'onRefresh' is required, but there's no corresponding argument. Try adding the required argument. - missing_required_argument
+  error - lib\presentation\screens\collection_list_screen.dart:47:7 - The named parameter 'onPressed' isn't defined. Try correcting the name to an existing named parameter's name, or defining a named parameter with the name 'onPressed'. - undefined_named_parameter
+warning - lib\presentation\providers\collection_provider.dart:62:17 - The stack trace variable 'st' isn't used and can be removed. Try removing the stack trace variable, or using it. - unused_catch_stack
+   info - lib\presentation\providers\collection_provider.dart:12:47 - 'CollectionCacheServiceRef' is deprecated and shouldn't be used. Will be removed in 3.0. Use Ref instead. Try replacing the use of the deprecated member with the replacement. - deprecated_member_use_from_same_package
+   info - lib\presentation\providers\collection_provider.dart:17:55 - 'CollectionRemoteDataSourceRef' is deprecated and shouldn't be used. Will be removed in 3.0. Use Ref instead. Try replacing the use of the deprecated member with the replacement. - deprecated_member_use_from_same_package
+   info - lib\presentation\providers\collection_provider.dart:22:43 - 'CollectionRepositoryRef' is deprecated and shouldn't be used. Will be removed in 3.0. Use Ref instead. Try replacing the use of the deprecated member with the replacement. - deprecated_member_use_from_same_package
+
+7 issues found.
