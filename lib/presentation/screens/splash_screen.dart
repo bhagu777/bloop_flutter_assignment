@@ -16,18 +16,17 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1500),
-    );
+    _controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 1500));
 
-    _scaleAnimation = Tween<double>(begin: 0.8, end: 1.0).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeOutBack),
-    );
+    _scaleAnimation = Tween<double>(
+      begin: 0.8,
+      end: 1.0,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutBack));
 
-    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
-    );
+    _fadeAnimation = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
 
     _controller.forward();
     Future.delayed(const Duration(milliseconds: 2500), () {
@@ -69,29 +68,17 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                     color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(
-                    Icons.auto_stories_rounded,
-                    size: 80,
-                    color: Theme.of(context).primaryColor,
-                  ),
+                  child: Icon(Icons.auto_stories_rounded, size: 80, color: Theme.of(context).primaryColor),
                 ),
                 const SizedBox(height: 24),
                 const Text(
                   'Collections',
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.2,
-                  ),
+                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, letterSpacing: 1.2),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Explore your curiosities',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey.shade500,
-                    letterSpacing: 0.5,
-                  ),
+                  style: TextStyle(fontSize: 16, color: Colors.grey.shade500, letterSpacing: 0.5),
                 ),
               ],
             ),
